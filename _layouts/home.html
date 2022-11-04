@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+<style>
+  .left {
+      float: left;
+      margin-right: 2em;
+  }
+  .right {
+      float: right;
+      margin-left: 1em;
+  }
+
+  h2 {
+    margin-bottom: 0em;
+  }
+
+  h3 {
+    text-align: center;
+    font-style: italic;
+  }
+
+  hr {
+    margin: 1.5em 0em;
+    border-color: #AAA;
+  }
+
+  #portfolio > a > img {
+    border-style: solid;
+    border-color: #00ffb7; /* #3c7194 - #00ffb7*/
+    margin: 0em 3em;
+  }
+
+  #portfolio > a > img:hover {
+    border-color: #AAA;
+  }
+
+  #portfolio > p {
+    margin-bottom: 5em;
+    overflow: hidden; /* this is what keep the <p> from wrapping */
+  }
+
+  #basicJavaScript {
+    color: #3c7194;
+    font-weight: bold;
+  }
+
+  #basicJavaScript:hover {
+    color: #b3daf4;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  function showAlert() {
+    var s = "Awesome 😮";
+    alert (s);
+  }
+</script>
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+
+</div>
