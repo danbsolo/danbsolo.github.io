@@ -12,13 +12,22 @@ layout: default
       margin-left: 1em;
   }
 
-  h2 {
-    margin-bottom: 0em;
+  .p-name {
+    color: #BFBFBF;
   }
 
-  h3 {
+  h2 {
+
+  }
+
+  #portfolio > h2 {
+    margin: 0em;
+  }
+
+  #portfolio > h3 {
     text-align: center;
     font-style: italic;
+    color: #BFBFBF; /* #00ffb795 */
   }
 
   hr {
@@ -26,14 +35,18 @@ layout: default
     border-color: #AAA;
   }
 
+  #portfolio > hr {
+    margin: 1em 5em;
+  }
+
   #portfolio > a > img {
     border-style: solid;
-    border-color: #00ffb7; /* #3c7194 - #00ffb7*/
+    border-color: #00ffb795; /* #3c7194 - #00ffb7*/
     margin: 0em 3em;
   }
 
   #portfolio > a > img:hover {
-    border-color: #AAA;
+    border-color: #00ffb7; /* #AAA */
   }
 
   #portfolio > p {
@@ -42,12 +55,12 @@ layout: default
   }
 
   #basicJavaScript {
-    color: #3c7194;
+    color: #00ffb795; /*#3c7194*/
     font-weight: bold;
   }
 
   #basicJavaScript:hover {
-    color: #b3daf4;
+    color: #00ffb7; /*#b3daf4*/
     text-decoration: underline;
   }
 </style>
